@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/admin_home_m_id"
+        android:title="Home" />
+    <item
+        android:id="@+id/admin_add_m_id"
+        android:title="Add Pizza" />
+    <item
+        android:id="@+id/admin_sell_m_id"
+        android:title="Selle Pizza" />
+
+</menu>

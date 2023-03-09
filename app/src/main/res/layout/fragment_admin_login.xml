@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Auth.AdminLoginFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/image_logo_login_id"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/admin_logo" />
+
+        <TextView
+            android:id="@+id/welcome_login_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_logo_login_id"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/opensans_bold"
+            android:gravity="center"
+            android:text="Admin"
+            android:textColor="@color/bgcolor"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/signtocontinue_text_login_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcome_login_id"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/open_sans_reguler"
+            android:gravity="center"
+            android:text="Admin Login"
+            android:textSize="18sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_admin"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/signtocontinue_text_login_id"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_admim"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:passwordToggleEnabled="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/email_admin"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Password"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/admin_login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password_admim"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/opensans_bold"
+            android:padding="18dp"
+            android:text="Login"
+            android:textSize="15sp"
+            tools:ignore="TextSizeCheck" />
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Customer.OrderActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/opensans_bold"
+        android:gravity="center"
+        android:text="Conform Order"
+        android:textColor="@color/bgcolor"
+        android:textSize="28sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/order_pizza_image_id"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/app_logo" />
+
+        <TextView
+            android:id="@+id/order_pizza_name_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/order_pizza_image_id"
+            android:fontFamily="@font/opensans_bold"
+            android:text="pizza name"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/order_pizza_price_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/order_pizza_name_id"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/order_pizza_image_id"
+            android:fontFamily="@font/opensans_bold"
+            android:text="pizza price"
+            android:textSize="15sp" />
+
+
+    </RelativeLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/order_discount_card_id"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:elevation="5dp"
+        android:visibility="gone"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/discout_text_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:text="Discount"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/order_dicount_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/open_sans_reguler"
+                android:layout_below="@id/discout_text_id"
+                android:text="titlelfkajslfkja"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="10dp"
+        android:elevation="5dp"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_reguler"
+                    android:text="Pizza price"
+                    android:textColor="@color/black"
+
+                    android:textSize="15sp"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/order_price_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="prizza price"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_reguler"
+                    android:text="Pizza Qunty"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/order_qunty_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="qunty"
+                    android:textSize="15sp"
+                    tools:ignore="TextSizeCheck" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="Grand Total"
+                    android:textColor="@color/black"
+
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/order_grand_total_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="end"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="Total"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <Button
+        android:id="@+id/placeorder_BTN_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Place order"
+        android:padding="15dp"
+        android:layout_gravity="center"
+        />
+
+
+</LinearLayout>

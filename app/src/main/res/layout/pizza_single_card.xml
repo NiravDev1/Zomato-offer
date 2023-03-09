@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_margin="5dp"
+    android:elevation="5dp"
+    app:cardCornerRadius="5dp">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ImageView
+            android:id="@+id/card_cpizza_img_id"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:src="@drawable/app_logo"
+            android:contentDescription="Pizza Image" />
+
+        <TextView
+            android:id="@+id/card_cpizza_name_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="pizza name"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/card_cpizza_price_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_cpizza_name_id"
+            android:layout_marginStart="5dp"
+            android:text="pizza price" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="5dp"
+            android:layout_alignParentBottom="true"
+            app:cardCornerRadius="5dp">
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="#1AFF0032"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/decrese_btn_Card"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/subtraction_cion" />
+
+                <TextView
+                    android:id="@+id/qunty_count_Card_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+
+                <ImageView
+                    android:id="@+id/increse_Btn_card_id"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/addition_icon"
+                    android:contentDescription="TODO" />
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <Button
+            android:id="@+id/add_pizza_iteme_Card_BTn_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add item"
+            android:layout_below="@id/card_cpizza_img_id"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            />
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
