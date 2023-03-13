@@ -53,12 +53,12 @@ public class OrderActivity extends AppCompatActivity {
 
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
                 Calendar calendar = Calendar.getInstance();
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d-M-yyyy");
                 data = simpleDateFormat.format(calendar.getTime()).toString();
 
                 OrderId = reference.push().getKey().toString();
 
-                OrderModel orderModel = new OrderModel(pname, String.valueOf(qunty), Discoutw, String.valueOf(shop), data, String.valueOf(total), user.getEmail(), OrderId, pimg);
+                OrderModel orderModel = new OrderModel(pname,String.valueOf(qunty),pprice,Discoutw,String.valueOf(shop),data,String.valueOf(total),user.getEmail(),OrderId,pimg);
 
 
                 reference.child("Order").child(user.getUid().toString()).child(OrderId).setValue(orderModel).addOnCompleteListener(new OnCompleteListener<Void>() {

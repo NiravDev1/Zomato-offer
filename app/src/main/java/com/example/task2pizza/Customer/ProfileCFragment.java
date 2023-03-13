@@ -5,15 +5,24 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.task2pizza.Auth.AuthActivity;
+import com.example.task2pizza.Auth.CustomerModel;
 import com.example.task2pizza.R;
 import com.example.task2pizza.databinding.FragmentProfilecBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -63,17 +72,46 @@ public class ProfileCFragment extends Fragment {
     }
 
     FragmentProfilecBinding binding;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding= FragmentProfilecBinding.inflate(inflater, container, false);
-        binding.logOutBTNId.setOnClickListener(new View.OnClickListener() {
+        binding = FragmentProfilecBinding.inflate(inflater, container, false);
+
+        binding.yourOrderId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences sharedPreferences= getActivity().getSharedPreferences("auth", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor=sharedPreferences.edit();
-                editor.putBoolean("flag",false);
+
+
+            }
+        });
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Customer").child(FirebaseAuth.getInstance().getUid());
+        reference.keepSynced(true);
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                CustomerModel customerModel = snapshot.getValue(CustomerModel.class);
+                binding.userNameId.setText(customerModel.getCustomerName());
+                binding.userEmailId.setText(customerModel.getCustomerEmail());
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+                Toast.makeText(getContext(), "Error:" + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        binding.logOutId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("auth", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("flag", false);
                 editor.apply();
                 startActivity(new Intent(getActivity(), AuthActivity.class));
                 getActivity().finish();

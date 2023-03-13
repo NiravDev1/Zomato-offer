@@ -17,7 +17,7 @@
             android:gravity="center">
 
             <TextView
-                android:id="@+id/search_date_id"
+                android:id="@+id/Data_text_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
@@ -26,6 +26,7 @@
 
 
             <ImageView
+                android:id="@+id/date_picker_btn"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginEnd="20sp"
@@ -43,7 +44,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/sell_pizza_admin_recycler_view_id"
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" />
     </LinearLayout>
 </FrameLayout>

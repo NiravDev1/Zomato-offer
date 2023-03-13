@@ -7,14 +7,15 @@ public class OrderModel {
     //discout
     //date
     //grandtotal
-    private  String PizzaName,PizzaQunty,PizzaDiscount,DiscountPrice,DateofBuy,GrandTotal,CustomerEmail,OrderId,PizzaImage;
+    private  String PizzaName,PizzaQunty,PizzaOrigin,PizzaDiscount,DiscountPrice,DateofBuy,GrandTotal,CustomerEmail,OrderId,PizzaImage;
 
     public OrderModel() {
     }
 
-    public OrderModel(String pizzaName, String pizzaQunty, String pizzaDiscount, String discountPrice, String dateofBuy, String grandTotal, String customerEmail, String orderId, String pizzaImage) {
+    public OrderModel(String pizzaName, String pizzaQunty, String pizzaOrigin, String pizzaDiscount, String discountPrice, String dateofBuy, String grandTotal, String customerEmail, String orderId, String pizzaImage) {
         PizzaName = pizzaName;
         PizzaQunty = pizzaQunty;
+        PizzaOrigin = pizzaOrigin;
         PizzaDiscount = pizzaDiscount;
         DiscountPrice = discountPrice;
         DateofBuy = dateofBuy;
@@ -38,6 +39,14 @@ public class OrderModel {
 
     public void setPizzaQunty(String pizzaQunty) {
         PizzaQunty = pizzaQunty;
+    }
+
+    public String getPizzaOrigin() {
+        return PizzaOrigin;
+    }
+
+    public void setPizzaOrigin(String pizzaOrigin) {
+        PizzaOrigin = pizzaOrigin;
     }
 
     public String getPizzaDiscount() {

@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.pizzaviewholder> {
-    int count = 1;
+
     List<PizzaModel> pizzaModelArrayList;
     Context context;
 
@@ -63,20 +63,21 @@ public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.pizzaviewhol
         holder.pname.setText(model.getPizzaname());
         holder.pprice.setText(model.getPizzaprice());
         Glide.with(holder.pizzaimg).load(model.getPizzaImg()).into(holder.pizzaimg);
+        final int[] count = {1};
         holder.increseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                count++;
-                holder.qunty.setText(String.valueOf(count));
+                count[0]++;
+                holder.qunty.setText(String.valueOf(count[0]));
             }
         });
         holder.decreseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (count != 1) {
-                    count--;
-                    holder.qunty.setText(String.valueOf(count));
+                if (count[0] != 1) {
+                    count[0]--;
+                    holder.qunty.setText(String.valueOf(count[0]));
                 }
 
             }

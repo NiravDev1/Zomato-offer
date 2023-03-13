@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:text="user email"
             android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:fontFamily="@font/opensans_bold"
             android:layout_marginStart="5dp"
             />

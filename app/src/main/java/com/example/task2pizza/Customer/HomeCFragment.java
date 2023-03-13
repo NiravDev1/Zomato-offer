@@ -90,7 +90,6 @@ public class HomeCFragment extends Fragment {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     PizzaModel pizzaModel = dataSnapshot.getValue(PizzaModel.class);
                     pizzaAdapter.add(pizzaModel);
-                    System.out.println(pizzaModel);
                     pizzaAdapter.notifyDataSetChanged();
                 }
             }
